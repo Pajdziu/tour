@@ -148,7 +148,7 @@ oraz możliwość zgrupowania zmiennych we wspólny blok,
 podobnie jak w przypadku importowania.
 
 Typy `int`, `uint` oraz `uintptr` zazwyczaj są 32-bitowe na systemach 32-bitowych oraz 64-bitowe na systemach 64-bitowych.
-Gdy potrzebny jest typ całkowitoliczbowy, powinno użyć się typu `int`, chyba że istnieją powody do użycia zmiennych o określonej długości lub bez bitu znaku. 
+Gdy potrzebny jest typ całkowitoliczbowy, powinno użyć się typu `int`, chyba że istnieją powody do użycia zmiennych o określonej długości lub liczb całkowitych bez bitu znaku.
 
 .play basics/basic-types.go
 
@@ -209,7 +209,7 @@ Spróbuj zmienić początkową wartość `v` w przykładowym kodzie i zaobserwuj
 
 * Stałe
 
-Stałe deklarowane są jak zmienne, z dodatkiem słowa kluczowego `const`.
+Stałe deklarowane są podobnie jak zmienne, lecz przy użyciu słowa kluczowego  `const`.
 
 Stałe mogą być pojedynczymi znakami, ciągami znaków, wartościami logicznymi czy numerycznymi.
 

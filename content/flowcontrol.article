@@ -1,73 +1,75 @@
-Flow control statements: for, if, else, switch and defer
+Wyrażenia sterujące przepływem programem: for, if, else, switch i defer
 Learn how to control the flow of your code with conditionals, loops, switches and defers.
+Naucz się jak sterować przepływem twojego kodu poprzez użycie instrukcji warunkowych, pętli, wyboru i odraczania
 
-The Go Authors
+Autorzy Go
 https://golang.org
 
 * For
 
-Go has only one looping construct, the `for` loop.
+Go posiada tylko jedną instrukcję pętli, pętlę `for`.
 
-The basic `for` loop has three components separated by semicolons:
+Podstawowa pętla `for` ma trzy komponenty rozdzielone średnikami:
 
-- the init statement: executed before the first iteration
-- the condition expression: evaluated before every iteration
-- the post statement: executed at the end of every iteration
+- wyrażenie inicjujące: wykonywane przed pierwszą iteracją
+- wyrażenie warunkowe: obliczane przez każdą iteracją
+- wyrażenie poiteracyjne: wykonywane na koniec każdej iteracji
 
-The init statement will often be a short variable declaration, and the
-variables declared there are visible only in the scope of the `for`
-statement.
+Wyrażenie inicjujące często jest skróconą deklaracją zmiennej. Zmienne
+zadeklarowane w tej części są widoczne tylko w zakresie tego Wyrażenia
+`for`.
 
-The loop will stop iterating once the boolean condition evaluates to `false`.
+Pętla zatrzyma się w momencie, gdy ewaluacja wyrażenia warunkowego zwróci `false`. 
 
-*Note:* Unlike other languages like C, Java, or JavaScript there are no parentheses
-surrounding the three components of the `for` statement and the braces `{`}` are
-always required.
+*Uwaga:* W przeciwieństwie do języków jak C, Java lub JavaScript nie ma tu nawiasów
+otaczających trzy komponenty pętli `for`, a nawiasy klamrowe `{`}` są zawsze 
+obowiązkowe.
 
 .play flowcontrol/for.go
 
-* For continued
+* For ciąg dalszy
 
-The init and post statement are optional.
+Wyrażenie inicjujące i poiteracyjne są opcjonalne.
 
 .play flowcontrol/for-continued.go
 
-* For is Go's "while"
+* For jest "while" w Go
 
-At that point you can drop the semicolons: C's `while` is spelled `for` in Go.
+W tym momencie możesz odłożyć średniki: `while` z języka C pisany jest `for` w Go.
 
 .play flowcontrol/for-is-gos-while.go
 
-* Forever
+* Wieczność
 
-If you omit the loop condition it loops forever, so an infinite loop is compactly expressed.
+Jeśli pominiesz wyrażenie warunkowe, pętla zapętla się, więc pętla nieskończona wyrażana jest zwięźle.
 
 .play flowcontrol/forever.go
 
 * If
 
-Go's `if` statements are like its `for` loops; the expression need not be
-surrounded by parentheses `(`)` but the braces `{`}` are required.
+W wyrażeniach `if` w Go, podobnie jak w pętlach `for`, nie potrzeba otaczać
+wyrażenia nawiasami `(`)`, ale nawiasy klamrowe `{`}` są obowiązkowe.
 
 .play flowcontrol/if.go
 
-* If with a short statement
+* If ze skróconym wyrażeniem
 
-Like `for`, the `if` statement can start with a short statement to execute before the condition.
+Jak w pętli `for`, wyrażenie `if` może być rozpoczęte krótki wyrażeniem, które wykona się przez warunkiem.
 
-Variables declared by the statement are only in scope until the end of the `if`.
+Zmienne zadeklarowane przez to wyrażenie dostępne będą tylko w zakrecie wyrażenia `if`.
 
-(Try using `v` in the last `return` statement.)
+(Spróbuj użyć `v` w ostatnim wyrażeniu `return`.)
 
 .play flowcontrol/if-with-a-short-statement.go
 
-* If and else
+* If i else
 
-Variables declared inside an `if` short statement are also available inside any
-of the `else` blocks.
+Zmienne zadeklarowane wewnątrz skróconego wyrażenia `if` są dostępne również w 
+sekcji `else`.
 
 (Both calls to `pow` are executed and return before the call to `fmt.Println`
 in `main` begins.)
+
 
 .play flowcontrol/if-and-else.go
 
